@@ -92,7 +92,6 @@ console.log(valorTecladoGamer+'\n\n ');
 valorTecladoGamer -= valorTecladoGamer;
 
 
-
 // ================ 9° (Operadores de igualdade): ================ //
 console.log("9° (Operadores de igualdade):");
 // Igualdade estrita
@@ -150,7 +149,6 @@ let corPerfil = corPersonalizada || corPadrao;
 console.log(corPerfil+'\n\n ');
 
 
-
 // ================ 13° Mini-Projeto(Trocando valores de variáveis): ================ //
 console.log("13° Mini-Projeto(Trocando valores de variáveis):");
 let a = 'vermelho';
@@ -161,7 +159,6 @@ b = c;
 
 console.log(a);
 console.log(b+'\n\n ');
-
 
 
 // ================ 14° (IF... ELSE...): ================ //
@@ -179,7 +176,6 @@ else if(hora > 12 && hora < 18){
 else{
     console.log("Boa noite\n\n ");
 }
-
 
 
 // ================ 15° (SWITCH... CASE...): ================ //
@@ -201,7 +197,6 @@ switch(permissao){
     default:
     console.log('Usuário não reconhecido!\n\n ');
 }
-
 
 
 // ================ 16° (LOOPS de repetição) ================ //
@@ -579,6 +574,7 @@ console.log(outra);
 console.log(nome);
 console.log(email+'\n\n ');
 
+
 // ================ 33° (Date) ================ //
 console.log("33° (Date):");
 const Date1 = new Date();
@@ -800,4 +796,109 @@ console.log(numeros2);
 const meio = numeros2.splice(2,1);//
 console.log(meio);
 console.log(numeros2);
+console.log('\n ');
+
+
+// ================ 44° (Esvaziando um array) ================ //
+console.log("44° (Esvaziando um array):");
+
+// Solução 1:
+let numeros01 = [1,2,3,4,5,6];
+let outros01 = numeros01;
+numeros01 = [];
+console.log(numeros01, outros01);
+
+// Solução 2: (melhor opção)
+let numeros02 = [1,2,3,4,5,6];
+let outros02 = numeros02;
+numeros02.length = 0;
+console.log(numeros02, outros02);
+
+// Solução 3:
+let numeros03 = [1,2,3,4,5,6];
+let outros03 = numeros03;
+numeros03.splice(0, numeros03.length);
+console.log(numeros03, outros03);
+
+// Solução 4:
+let numeros04 = [1,2,3,4,5,6];
+let outros04 = numeros04;
+while(numeros04.length > 0)
+    numeros04.pop();
+console.log(numeros04, outros04);
+console.log('\n ');
+
+
+// ================ 45° (Combinando um array) ================ //
+console.log("45° (Combinando um array):");
+// Quando é do tipo objeto se altera em todos os lugares que utilizam 'primeiro1' 
+// como referência. Quando não é, só altera o escolhido
+const primeiro1 = [{id:1}];
+const segundo1 = [4,5,6];
+primeiro1[0].id = 10; 
+
+// Combinar
+const combinado = primeiro1.concat(segundo1);
+console.log(combinado);
+
+// Dividir
+const cortado = combinado.slice(2);
+console.log(cortado);
+console.log('\n ');
+
+
+// ================ 46° (Operador spread) ================ //
+console.log("46° (Operador spread):");
+const primeiro2 = [1,2,3];
+const segundo2 = [4,5,6];
+
+// const combinado2 = primeiro2.concat(segundo2); 
+const combinado2 = [...primeiro2,'a',...segundo2,'#'];
+console.log(combinado2);
+
+// const clonado2 = combinado2.slice();
+const clonado2 = [...combinado2];
+console.log(clonado2);
+console.log('\n ');
+
+
+// ================ 47° (Foreach) ================ //
+console.log("47° (Foreach):");
+const numeros3 = [1,2,3,4,5];
+// numeros3.forEach(function(numero){
+//     console.log(numero);
+// })
+numeros3.forEach((numero,indice) => console.log('['+indice+']',numero))
+console.log('\n ');
+
+
+// ================ 48° (Combinando arrays) ================ //
+console.log("48° (Combinando arrays):");
+const numeros4 = [1,2,3,4,5];
+const combinado4 = numeros4.join('.');
+console.log(combinado4);
+
+const frase4 = "Olá bem vindo ao curso";
+const resultado4 = frase4.split(' ');
+console.log(resultado4);
+console.log(resultado4.join('-'));
+console.log('\n ');
+
+
+// ================ 49° (Input) ================ //
+console.log("49° (Input):\n\n ");
+// prompt('Olá, qual é a sua cor preferida?');
+let corFavorita = prompt('Olá, qual é a sua cor preferida?');
+if(corFavorita == 'Vermelho')
+alert('Essa é minha cor favorita também!');
+else
+alert('Essa não é minha cor favorita!');
+
+
+// ================ 50° (Manipulando DOM) ================ //
+console.log("50° (Manipulando DOM):");
+console.log('Digite estes códigos no console:');
+console.log("document.getElementById('input').innerText = 'Olá Mundo';")
+console.log("document.getElementsByClassName('parenteses')[0].innerText = 'Enviado';")
+console.log("document.getElementsByClassName('parenteses')[0].click();")
 console.log('\n ');
